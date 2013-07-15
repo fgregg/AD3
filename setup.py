@@ -5,7 +5,7 @@ from distutils.extension import Extension
 from distutils.command.build_clib import build_clib
 from distutils.errors import DistutilsSetupError
 from distutils import log
-from glob import glob
+
 
 class build_libad3(build_clib):
     def build_libraries(self, libraries):
@@ -56,30 +56,14 @@ libad3 = ('ad3', {
         '-O3',
         '-c',
         '-fmessage-length=0'
-
-
-
     ],
 })
 
-#src = "../ad3/"
 
-#files = ['GCoptimization.cpp', 'graph.cpp', 'LinkedBlockList.cpp',
-    #'maxflow.cpp']
-
-#files = [gco_directory + f for f in files]
-#files.insert(0, "gco_python.pyx")
-
-#setup(cmdclass={'build_ext': build_ext}, ext_modules=[
-#    Extension("ad3", ["factor_graph.pyx"], language="c++",
-#              include_dirs=["../"], library_dirs=[src], libraries=["ad3"])])
-
-
-
-setup(name='pyad3',
+setup(name='AD3',
       libraries=[libad3],
       cmdclass={'build_clib': build_libad3, 'build_ext' : build_ext},
-      ext_modules=[Extension("pyad3.factor_graph", 
+      ext_modules=[Extension("AD3.factor_graph", 
                              ["python/factor_graph.pyx"], 
                              include_dirs = ["ad3"],
                              language="c++",

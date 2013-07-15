@@ -61,7 +61,7 @@ libad3 = ('ad3', {
 
 
 setup(name='ad3',
-      package_dir = {'ad3': 'python/lib'},
+      package_dir = {'ad3': 'python/ad3'},
       packages = ['ad3'],
       libraries=[libad3],
       cmdclass={'build_clib': build_libad3, 'build_ext' : build_ext},

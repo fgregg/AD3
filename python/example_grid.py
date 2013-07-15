@@ -2,12 +2,12 @@ import itertools
 import numpy as np
 import matplotlib.pyplot as plt
 
-import ad3
+import pyad3
 
 grid_size = 20
 num_states = 5
 
-factor_graph = ad3.PFactorGraph()
+factor_graph = pyad3.PFactorGraph()
 
 multi_variables = []
 random_grid = np.random.uniform(size=(grid_size, grid_size, num_states))

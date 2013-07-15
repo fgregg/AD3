@@ -1,13 +1,13 @@
 import itertools
 import numpy as np
 #from numpy.testing.utils import assert_array_almost_equal
-from . import ad3
+import pyad3
 
 
 def simple_grid(unaries, pairwise, verbose=1):
     height, width, n_states = unaries.shape
 
-    factor_graph = ad3.PFactorGraph()
+    factor_graph = pyad3.PFactorGraph()
 
     multi_variables = []
     for i in xrange(height):
@@ -52,7 +52,7 @@ def general_graph(unaries, edges, edge_weights, verbose=1, n_iterations=1000,
         raise ValueError("Number of edge weights different from number of"
                          "edges")
 
-    factor_graph = ad3.PFactorGraph()
+    factor_graph = pyad3.PFactorGraph()
     n_states = unaries.shape[-1]
 
     multi_variables = []

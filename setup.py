@@ -79,7 +79,7 @@ libad3 = ('ad3', {
 setup(name='pyad3',
       libraries=[libad3],
       cmdclass={'build_clib': build_libad3, 'build_ext' : build_ext},
-      ext_modules=[Extension("pyad3.pyad3", 
+      ext_modules=[Extension("pyad3.factor_graph", 
                              ["python/factor_graph.pyx"], 
                              include_dirs = ["ad3"],
                              language="c++",

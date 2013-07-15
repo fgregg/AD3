@@ -60,10 +60,12 @@ libad3 = ('ad3', {
 })
 
 
-setup(name='AD3',
+setup(name='ad3',
+      package_dir = {'ad3': 'python/lib'},
+      packages = ['ad3'],
       libraries=[libad3],
       cmdclass={'build_clib': build_libad3, 'build_ext' : build_ext},
-      ext_modules=[Extension("AD3.factor_graph", 
+      ext_modules=[Extension("ad3.factor_graph", 
                              ["python/factor_graph.pyx"], 
                              include_dirs = ["ad3"],
                              language="c++",

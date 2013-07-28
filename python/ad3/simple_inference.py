@@ -33,7 +33,7 @@ def simple_grid(unaries, pairwise, verbose=1):
     factor_graph.adapt_eta_ad3(True)
     factor_graph.set_max_iterations_ad3(5000)
     factor_graph.set_verbosity(verbose)
-    value, marginals, edge_marginals = factor_graph.solve_lp_map_ad3()
+    value, marginals, edge_marginals, _ = factor_graph.solve_lp_map_ad3()
     marginals = np.array(marginals).reshape(unaries.shape)
     edge_marginals = np.array(edge_marginals).reshape(-1, n_states ** 2)
 
